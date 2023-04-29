@@ -1,0 +1,21 @@
+{
+  "name": "webfauck",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "faust2webaudio": "github:grame-cncm/faust2webaudio",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0"
+  },
+  "dependencies": {
+    "js-sha256": "^0.9.0",
+    "monaco-editor": "^0.37.1",
+    "webchuck": "^1.2.1"
+  }
+}
