@@ -52,7 +52,7 @@ g(a) = 1 / sqrt(a + 1);
 /* Take in ChucK output as input and process */
 process = (out, out)
 with { 
-    out(x) = db2linear(gain)*g(dist)*f(db2linear(dist),x); 
+    out(x) = db2linear(gain)*g(distortion)*f(db2linear(distortion),x); 
 };
 `;
 

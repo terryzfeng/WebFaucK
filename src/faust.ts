@@ -6,19 +6,21 @@ import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
 let faustEditor : monaco.editor.IStandaloneCodeEditor;
 let monoNode : FaustAudioWorkletNode | FaustScriptProcessorNode;
 
-// Set up Faust compiler
-const faust = new Faust({
-    // Update the below paths with the locations of the necessary files!
-    // They can be found inside the Node module, under the 'dist' directory.
-    wasmLocation: "libfaust-wasm.wasm",
-    dataLocation: "libfaust-wasm.data",
-});
+
 
 export async function startFaust() {
     // Define Faust programs to run
-    const monoCode = faustEditor?.getValue();
+    let monoCode = faustEditor?.getValue();
 
     audioContext.resume();
+
+    // Set up Faust compiler
+    const faust = new Faust({
+        // Update the below paths with the locations of the necessary files!
+        // They can be found inside the Node module, under the 'dist' directory.
+        wasmLocation: "libfaust-wasm.wasm",
+        dataLocation: "libfaust-wasm.data",
+    });
 
     // Ensure that the compiler is ready before continuing
     await faust.ready;
